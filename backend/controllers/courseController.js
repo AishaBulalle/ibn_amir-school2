@@ -49,8 +49,6 @@ const deleteCourse = (req, res) => {
   });
 };
 
-// Other controller methods for update and delete can be added similarly
-
 module.exports = {
   getCourses,
   createCourse,

@@ -7,15 +7,6 @@ const getEnrollments = (req, res) => {
   });
 };
 
-const createEnrollment = (req, res) => {
-  const { student_id, course_id } = req.body;
-  enrollmentModel.addEnrollment(student_id, course_id, (err, results) => {
-    if (err) return res.status(500).json(err);
-    res.status(201).json({ id: results.insertId, student_id, course_id });
-  });
-};
-
-// New method to get a specific enrollment by ID
 const getEnrollmentById = (req, res) => {
   const { id } = req.params;
   enrollmentModel.getEnrollmentById(id, (err, results) => {
@@ -26,7 +17,14 @@ const getEnrollmentById = (req, res) => {
   });
 };
 
-// New method to update an enrollment
+const createEnrollment = (req, res) => {
+  const { student_id, course_id } = req.body;
+  enrollmentModel.addEnrollment(student_id, course_id, (err, results) => {
+    if (err) return res.status(500).json(err);
+    res.status(201).json({ id: results.insertId, student_id, course_id });
+  });
+};
+
 const updateEnrollment = (req, res) => {
   const { id } = req.params;
   const { student_id, course_id } = req.body;
@@ -37,7 +35,6 @@ const updateEnrollment = (req, res) => {
   });
 };
 
-// New method to delete an enrollment
 const deleteEnrollment = (req, res) => {
   const { id } = req.params;
 
@@ -46,8 +43,6 @@ const deleteEnrollment = (req, res) => {
     res.status(204).send(); // No content to send back
   });
 };
-
-// Other controller methods for delete can be added similarly
 
 module.exports = {
   getEnrollments,
