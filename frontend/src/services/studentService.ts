@@ -1,8 +1,8 @@
-// src/services/studentService.js
+import { Student } from '../types/Student';
 
 const API_URL = 'http://localhost:5001';
 
-export const getStudents = async () => {
+export const getStudents = async (): Promise<Student[]> => {
   const response = await fetch(`${API_URL}/students`);
   if (!response.ok) {
     throw new Error('Failed to fetch students');
@@ -10,7 +10,7 @@ export const getStudents = async () => {
   return response.json();
 };
 
-export const addStudent = async (student) => {
+export const addStudent = async (student: Student) => {
   const response = await fetch(`${API_URL}/students`, {
     method: 'POST',
     headers: {
@@ -23,5 +23,3 @@ export const addStudent = async (student) => {
   }
   return response.json();
 };
-
-// Add other functions like updateStudent, deleteStudent, etc.
