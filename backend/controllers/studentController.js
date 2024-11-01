@@ -27,10 +27,17 @@ const updateStudent = (req, res) => {
 };
 
 const createStudent = (req, res) => {
-  const { username, password, email } = req.body;
-  studentModel.addStudent(username, password, email, (err, results) => {
+  const { username, email, role, password } = req.body;
+
+  if (role === 'teacher' && !password) {
+    return res
+      .status(400)
+      .json({ message: 'Password is required for teachers' });
+  }
+
+  studentModel.addUser(username, email, role, password, (err, results) => {
     if (err) return res.status(500).json(err);
-    res.status(201).json({ id: results.insertId, username, email });
+    res.status(201).json({ id: results.insertId, username, email, role });
   });
 };
 
@@ -39,11 +46,9 @@ const deleteStudent = (req, res) => {
 
   studentModel.deleteStudent(id, (err) => {
     if (err) return res.status(500).json(err);
-    res.status(204).send(); // No content to send back
+    res.status(204).send();
   });
 };
-
-// Other controller methods for update and delete can be added similarly
 
 module.exports = {
   getStudents,
