@@ -26,6 +26,7 @@ const deleteCourse = (id, callback) => {
   const sql = 'DELETE FROM courses WHERE id = ?';
   db.query(sql, [id], callback);
 };
+
 // Other CRUD operations (delete, update, etc.) can be added similarly
 
 module.exports = {
