@@ -1,0 +1,94 @@
+html,
+body {
+  height: 100%; /* Ensure the body takes up the full height */
+  margin: 0; /* Remove default margin */
+  background-image: url('../assets/ibnamir123.jpg'); /* Path to your background image */
+  background-size: cover; /* Cover the entire viewport */
+  /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+.homepage-container {
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+  width: 100%; /* Full width */
+  margin: 0; /* Remove margin */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  position: relative; /* Position relative to allow z-index management */
+  z-index: 1; /* Ensure it's on top of the background */
+  overflow: auto; /* Allow scrolling if content overflows */
+  flex-grow: 1; /* Allow this container to grow */
+}
+
+.homepage-header {
+  position: fixed; /* Fixed header */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  right: 0; /* Align to right */
+  background-color: rgba(2, 1, 1, 0.8); /* Adjust to a transparent brown */
+  color: white;
+  padding: 20px;
+  z-index: 1000; /* Keep it on top */
+  display: flex; /* Flexbox for header */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
+}
+
+.homepage-header h1 {
+  margin: 0;
+}
+
+.login-button {
+  padding: 10px 20px;
+  background-color: #0a36c5;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #000000;
+}
+
+.homepage-section {
+  margin: 500px 20px 20px; /* Add top margin to create space for the fixed header */
+  padding: 15px;
+  /* Slightly transparent for visibility */
+  border-radius: 5px;
+  position: relative; /* Ensure it can overlap the video */
+  z-index: 10; /* Keep it above the video */
+}
+
+.video-section {
+  margin: 20px 0; /* Space around the video */
+}
+
+.courses-section {
+  margin: 20px 0; /* Add margin for spacing */
+  padding: 15px;
+  /* Maintain slightly transparent background */
+  border-radius: 5px;
+  /* Change text color to black */
+}
+
+.footer {
+  padding: 20px;
+  background-color: rgba(
+    1,
+    1,
+    1,
+    0.8
+  ); /* Match footer with transparent brown */
+  color: white;
+  text-align: center; /* Center text in footer */
+}
+
+.footer h2 {
+  margin: 0;
+}
+
+.footer p {
+  margin: 5px 0;
+}
