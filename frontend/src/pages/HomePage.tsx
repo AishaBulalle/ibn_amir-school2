@@ -13,7 +13,7 @@ const HomePage = () => {
       <header className="homepage-header">
         <h1>🕌Ibn Amir</h1>
         <Link to="/login" className="login-button">
-          Login
+          Teacher Login
         </Link>
       </header>
 
