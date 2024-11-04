@@ -117,7 +117,7 @@ const StudentDashboard = () => {
               >
                 Delete
               </button>
-              <button onClick={() => setEditingStudent(student)}>Edit</button>
+              <button onClick={() => setEditingStudent(student)}>Update</button>
             </div>
           </li>
         ))}

@@ -93,13 +93,13 @@ const EnrollmentDashboard = () => {
                 onClick={() => handleAddCourse(student.id!)}
                 className="add-course"
               >
-                Add Course
+                Add
               </button>
               <button
                 onClick={() => handleUpdateCourse(student.id!)}
                 className="update-course"
               >
-                Update Course
+                Update
               </button>
             </div>
           </div>

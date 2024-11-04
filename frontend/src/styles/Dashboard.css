@@ -1,10 +1,25 @@
+/* Dashboard Background */
+.dashboard {
+  height: 100vh; /* Make sure it takes the full viewport height */
+  margin: 0; /* Remove default margin */
+  background-image: url('../assets/ibnamir1234.avif'); /* Path to your background image */
+  background-size: cover; /* Cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  position: relative; /* Positioning context for the container */
+}
+
 /* Dashboard Container */
 .dashboard-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 800px; /* Updated for better fit */
+  margin: 0 auto; /* Center the container */
+  padding: 50px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Light background with transparency */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
 }
@@ -12,7 +27,7 @@
 /* Title */
 .dashboard-container h1 {
   text-align: center;
-  color: #333;
+  color: rgb(8, 1, 1); /* Dark red for title */
   margin-bottom: 20px;
 }
 
@@ -30,6 +45,12 @@
   align-items: center;
   padding: 15px;
   border-bottom: 1px solid #ddd;
+  background-color: rgba(
+    248,
+    247,
+    247,
+    0.8
+  ); /* Light background for student items */
 }
 
 .student-item:last-child {
@@ -49,9 +70,9 @@
 
 /* Action Buttons */
 .student-actions button {
-  background-color: #007bff;
+  background-color: #ddac43; /* Yellow for primary actions */
   border: none;
-  color: #fff;
+  color: white;
   padding: 8px 12px;
   margin-left: 5px;
   border-radius: 4px;
@@ -59,15 +80,15 @@
 }
 
 .student-actions button:hover {
-  background-color: #0056b3;
+  background-color: #c69c36; /* Darker yellow on hover */
 }
 
 .student-actions button.delete {
-  background-color: #dc3545;
+  background-color: #dc3545; /* Red for delete */
 }
 
 .student-actions button.delete:hover {
-  background-color: #c82333;
+  background-color: #c82333; /* Darker red on hover */
 }
 
 /* Form Section */
@@ -86,7 +107,7 @@
 
 .form-section button {
   align-self: flex-start;
-  background-color: #28a745;
+  background-color: #28a745; /* Green for add */
   border: none;
   color: #fff;
   padding: 10px 15px;
@@ -95,7 +116,7 @@
 }
 
 .form-section button:hover {
-  background-color: #218838;
+  background-color: #218838; /* Darker green on hover */
 }
 
 /* Search Section */
@@ -118,7 +139,7 @@
 }
 
 .filter-buttons button {
-  background-color: #007bff;
+  background-color: #ddac43; /* Yellow for filter buttons */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -128,11 +149,11 @@
 }
 
 .filter-buttons button.active {
-  background-color: #0056b3;
+  background-color: #c69c36; /* Darker yellow for active */
 }
 
 .filter-buttons button:hover {
-  background-color: #0056b3;
+  background-color: #c69c36; /* Darker yellow on hover */
 }
 
 /* Course List */
@@ -156,7 +177,7 @@
 }
 
 .course-update-form button {
-  background-color: #28a745;
+  background-color: #c69c36; /* Green for add/update */
   color: white;
   border: none;
   padding: 8px;
@@ -165,7 +186,7 @@
 }
 
 .course-update-form button:hover {
-  background-color: #218838;
+  background-color: #c69c36; /* Darker green on hover */
 }
 
 /* Course Update Section */
@@ -195,13 +216,13 @@
 }
 
 .course-update .add-course:hover {
-  background-color: #218838;
+  background-color: #218838; /* Darker green on hover */
 }
 
 .course-update .update-course {
-  background-color: #007bff; /* Blue for update */
+  background-color: #c69c36; /* Blue for update */
 }
 
 .course-update .update-course:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
 }
