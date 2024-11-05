@@ -6,6 +6,7 @@ const db = require('./config/db'); // Import the db connection
 const studentRoutes = require('./routes/studentRoutes');
 const courseRoutes = require('./routes/courseRoutes');
 const enrollmentRoutes = require('./routes/enrollmentRoutes');
+const authRoutes = require('./routes/authRoutes'); // Import the auth routes
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 app.use('/students', studentRoutes);
 app.use('/courses', courseRoutes);
 app.use('/enrollments', enrollmentRoutes);
+app.use('/auth', authRoutes); // This line makes your login endpoint available at /auth/login
 
 // Start the server
 app.listen(PORT, () => {
