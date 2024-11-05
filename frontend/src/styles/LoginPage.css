@@ -1,0 +1,65 @@
+/* Login Page Background */
+.login-page {
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  background-image: url('../assets/ibnamir1234.avif'); /* Background image */
+  background-size: cover; /* Cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  display: flex; /* Use flexbox to center items */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px; /* Width for the login form */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 50px; /* Padding around the content */
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Light background with transparency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  font-family: Arial, sans-serif; /* Font style */
+}
+
+/* Title */
+.login-container h1 {
+  text-align: center; /* Center the title */
+  color: rgb(8, 1, 1); /* Dark red for title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Form Section */
+.login-container form {
+  display: flex; /* Flex layout for form */
+  flex-direction: column; /* Stack inputs vertically */
+  gap: 15px; /* Space between input fields */
+}
+
+/* Input Fields */
+.login-container input {
+  padding: 10px; /* Padding inside input */
+  border: 1px solid #ddd; /* Border style */
+  border-radius: 4px; /* Rounded corners */
+  width: 100%; /* Full width of the container */
+}
+
+/* Button Styles */
+.login-container button {
+  background-color: #ddac43; /* Yellow for login button */
+  color: white; /* Text color */
+  padding: 10px; /* Padding inside button */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth background change */
+  width: 100%; /* Full width for button */
+}
+
+.login-container button:hover {
+  background-color: #c69c36; /* Darker yellow on hover */
+}
