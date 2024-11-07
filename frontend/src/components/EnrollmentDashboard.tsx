@@ -48,8 +48,16 @@ const EnrollmentDashboard = () => {
   const handleAddCourse = async (studentId: number) => {
     const selectedCourseId = selectedCourseIds[studentId];
     if (selectedCourseId !== null) {
-      await addEnrollment(studentId, selectedCourseId);
-      fetchCoursesForAllStudents(students);
+      // Check if the student is already enrolled in the selected course
+      const isEnrolled = courses[studentId]?.some(
+        (course) => course.id === selectedCourseId
+      );
+      if (!isEnrolled) {
+        await addEnrollment(studentId, selectedCourseId);
+        fetchCoursesForAllStudents(students); // Refresh the list of courses
+      } else {
+        alert('This course is already enrolled for this student.');
+      }
     }
   };
 
@@ -66,7 +74,7 @@ const EnrollmentDashboard = () => {
       {students.map((student) => (
         <li key={student.id} className="student-item">
           <div className="student-info">
-            <p>👤{student.username}</p>
+            <p>👤 {student.username}</p>
             <p>{student.email}</p>
             <h4>Courses:</h4>
             <ul className="course-list">
