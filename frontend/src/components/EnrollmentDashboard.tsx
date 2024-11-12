@@ -14,6 +14,7 @@ const EnrollmentDashboard = () => {
   const [selectedCourseIds, setSelectedCourseIds] = useState<
     Record<number, number | null>
   >({});
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
     fetchStudentsAndCourses();
@@ -48,72 +49,84 @@ const EnrollmentDashboard = () => {
   const handleAddCourse = async (studentId: number) => {
     const selectedCourseId = selectedCourseIds[studentId];
     if (selectedCourseId !== null) {
-      // Check if the student is already enrolled in the selected course
-      const isEnrolled = courses[studentId]?.some(
-        (course) => course.id === selectedCourseId
-      );
-      if (!isEnrolled) {
-        await addEnrollment(studentId, selectedCourseId);
-        fetchCoursesForAllStudents(students); // Refresh the list of courses
-      } else {
-        alert('This course is already enrolled for this student.');
+      // Check if the student is already enrolled in any course
+      const currentCourses = courses[studentId] || [];
+      if (currentCourses.length > 0) {
+        setErrorMessage('A student can only enroll in one course at a time.');
+        return; // Don't allow adding a course if the student is already enrolled in one
       }
+
+      await addEnrollment(studentId, selectedCourseId);
+      fetchCoursesForAllStudents(students); // Refresh the list of courses
+      setErrorMessage(''); // Clear any previous error messages
     }
   };
 
   const handleUpdateCourse = async (studentId: number) => {
     const selectedCourseId = selectedCourseIds[studentId];
-    if (selectedCourseId !== null) {
+    const currentCourses = courses[studentId] || [];
+
+    if (selectedCourseId !== null && currentCourses.length > 0) {
       await updateEnrollment(studentId, selectedCourseId);
-      fetchCoursesForAllStudents(students);
+      fetchCoursesForAllStudents(students); // Refresh the list of courses
+      setErrorMessage(''); // Clear any previous error messages
+    } else {
+      setErrorMessage(
+        'No course selected or student is not enrolled in any course.'
+      );
     }
   };
 
   return (
-    <ul className="student-list">
-      {students.map((student) => (
-        <li key={student.id} className="student-item">
-          <div className="student-info">
-            <p>👤 {student.username}</p>
-            <p>{student.email}</p>
-            <h4>Courses:</h4>
-            <ul className="course-list">
-              {courses[student.id!]?.map((course) => (
-                <li key={course.id}>{course.course_name}</li>
-              )) || <li>No courses found</li>}
-            </ul>
-            <div className="course-update">
-              <select
-                value={selectedCourseIds[student.id!] || ''}
-                onChange={(e) =>
-                  setSelectedCourseIds({
-                    ...selectedCourseIds,
-                    [student.id!]: Number(e.target.value),
-                  })
-                }
-              >
-                <option value="">Select a Course</option>
-                <option value="1">Quran Recitation</option>
-                <option value="2">Arabic Language</option>
-                <option value="3">Islamic Studies</option>
-              </select>
-              <button
-                onClick={() => handleAddCourse(student.id!)}
-                className="add-course"
-              >
-                Add
-              </button>
-              <button
-                onClick={() => handleUpdateCourse(student.id!)}
-                className="update-course"
-              >
-                Update
-              </button>
+    <div>
+      {/* Display the error message at the top */}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
+
+      <ul className="student-list">
+        {students.map((student) => (
+          <li key={student.id} className="student-item">
+            <div className="student-info">
+              <p>👤 {student.username}</p>
+              <p>{student.email}</p>
+              <h4>Courses:</h4>
+              <ul className="course-list">
+                {courses[student.id!]?.map((course) => (
+                  <li key={course.id}>{course.course_name}</li>
+                )) || <li>No courses found</li>}
+              </ul>
+              <div className="course-update">
+                <select
+                  value={selectedCourseIds[student.id!] || ''}
+                  onChange={(e) =>
+                    setSelectedCourseIds({
+                      ...selectedCourseIds,
+                      [student.id!]: Number(e.target.value),
+                    })
+                  }
+                >
+                  <option value="">Select a Course</option>
+                  <option value="1">Quran Recitation</option>
+                  <option value="2">Arabic Language</option>
+                  <option value="3">Islamic Studies</option>
+                </select>
+                <button
+                  onClick={() => handleAddCourse(student.id!)}
+                  className="add-course"
+                >
+                  Add
+                </button>
+                <button
+                  onClick={() => handleUpdateCourse(student.id!)}
+                  className="update-course"
+                >
+                  Update
+                </button>
+              </div>
             </div>
-          </div>
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

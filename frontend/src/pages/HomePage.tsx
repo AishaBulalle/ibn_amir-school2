@@ -68,7 +68,7 @@ const HomePage = () => {
 
         <footer className="footer">
           <h2>Contact Us</h2>
-          <p>Email: teacher@example.com</p>
+          <p>Email: alimansour@example.com</p>
           <p>Phone: +123456789</p>
         </footer>
       </div>
