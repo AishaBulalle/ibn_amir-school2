@@ -12,11 +12,23 @@ const getAllEnrollments = (req, res) => {
 const addEnrollment = (req, res) => {
   const { student_id, course_id } = req.body;
 
-  enrollmentModel.addEnrollment(student_id, course_id, (err, result) => {
+  // Check if the student is already enrolled in a course
+  enrollmentModel.getCoursesByStudentId(student_id, (err, courses) => {
     if (err) return res.status(500).json({ error: err.message });
-    res
-      .status(201)
-      .json({ message: 'Enrollment added successfully', id: result.insertId });
+    if (courses.length > 0) {
+      return res
+        .status(400)
+        .json({ message: 'Student is already enrolled in a course.' });
+    }
+
+    // Proceed with adding enrollment if the student is not enrolled in any course
+    enrollmentModel.addEnrollment(student_id, course_id, (err, result) => {
+      if (err) return res.status(500).json({ error: err.message });
+      res.status(201).json({
+        message: 'Enrollment added successfully',
+        id: result.insertId,
+      });
+    });
   });
 };
 
@@ -34,9 +46,10 @@ const getEnrollmentById = (req, res) => {
 
 // Controller to update an enrollment
 const updateEnrollment = (req, res) => {
-  const { studentId } = req.params;
+  const { studentId } = req.params; // This will capture studentId from the URL
   const { course_id } = req.body;
 
+  // Call the model to update the enrollment for the student
   enrollmentModel.updateEnrollment(studentId, course_id, (err, result) => {
     if (err) return res.status(500).json({ error: err.message });
     if (result.affectedRows === 0) {
@@ -58,13 +71,13 @@ const deleteEnrollment = (req, res) => {
 
 // Controller to get courses by student ID
 const getCoursesByStudentId = (req, res) => {
-  const { studentId } = req.params;
+  const { studentId } = req.params; // Access the studentId parameter from the URL
 
   enrollmentModel.getCoursesByStudentId(studentId, (err, courses) => {
     if (err) return res.status(500).json({ error: err.message });
     if (courses.length === 0)
       return res.status(404).json({ message: 'No courses found' });
-    res.json(courses);
+    res.json(courses); // Send courses as response
   });
 };
 

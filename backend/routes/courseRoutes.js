@@ -2,12 +2,19 @@ const express = require('express');
 const router = express.Router();
 const courseController = require('../controllers/courseController');
 
+// Route to get all courses
 router.get('/', courseController.getCourses);
-router.get('/:id', courseController.getCourseById);
-router.post('/', courseController.createCourse);
-router.put('/:id', courseController.updateCourse);
-router.delete('/:id', courseController.deleteCourse);
 
-// Additional routes for updating and deleting courses can be added here
+// Route to get a course by its ID
+router.get('/:id', courseController.getCourseById);
+
+// Route to add a new course
+router.post('/', courseController.createCourse);
+
+// Route to update an existing course
+router.put('/:id', courseController.updateCourse);
+
+// Route to delete a course
+router.delete('/:id', courseController.deleteCourse);
 
 module.exports = router;

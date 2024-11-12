@@ -23,7 +23,11 @@ const getEnrollmentById = (id, callback) => {
 
 // Update an enrollment
 const updateEnrollment = (studentId, courseId, callback) => {
-  const sql = `UPDATE enrollments SET course_id = ? WHERE student_id = ?`;
+  const sql = `
+    UPDATE enrollments
+    SET course_id = ?
+    WHERE student_id = ?
+  `;
   db.query(sql, [courseId, studentId], callback);
 };
 

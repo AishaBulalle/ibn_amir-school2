@@ -27,6 +27,16 @@ const deleteCourse = (id, callback) => {
   db.query(sql, [id], callback);
 };
 
+const getCoursesByStudentId = (studentId, callback) => {
+  const sql = `
+    SELECT courses.id, courses.course_name, courses.description, enrollments.enrollment_date
+    FROM enrollments
+    JOIN courses ON enrollments.course_id = courses.id
+    WHERE enrollments.student_id = ?
+  `;
+  db.query(sql, [studentId], callback);
+};
+
 // Other CRUD operations (delete, update, etc.) can be added similarly
 
 module.exports = {
@@ -35,4 +45,5 @@ module.exports = {
   updateCourse,
   deleteCourse,
   getCourseById,
+  getCoursesByStudentId,
 };
