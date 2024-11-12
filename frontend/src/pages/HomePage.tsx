@@ -1,5 +1,5 @@
 // src/pages/HomePage.tsx
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import '../styles/HomePage.css';
 import videoFile from '../assets/ibnamir-video.mp4'; // Import the video file
