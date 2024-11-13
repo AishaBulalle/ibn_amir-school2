@@ -21,20 +21,24 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: npm install, build, and test
+      - name: Install dependencies, build, and test (backend)
         run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          cd ./backend  # Change to the backend directory where package.json is located
+          npm install    # Install dependencies
+          npm run build --if-present  # Run build command if it exists
+          npm run test --if-present    # Run test command if it exists
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: |
+          cd ./backend  # Change to the backend directory again
+          zip -r release.zip .  # Create a zip file of the backend contents
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: release.zip
+          path: backend/release.zip 
 
   deploy:
     runs-on: ubuntu-latest
