@@ -10,7 +10,7 @@ const enrollmentRoutes = require('./routes/enrollmentRoutes');
 const authRoutes = require('./routes/authRoutes'); // Import the auth routes
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors());
