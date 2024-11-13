@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: backend/release.zip 
+          path: ./backend/release.zip 
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'ibnamer-backend'
           slot-name: 'Production'
-          package: .
+          package: ./backend
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5BB21E13D72C4003BB86D8798855EF4D }}
