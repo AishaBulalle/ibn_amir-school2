@@ -66,5 +66,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'ibnamer-backend'  # Name of the Azure Web App for backend
-          package: ./backend  # Ensure this points to the backend directory after unzipping
+          package: .  # Points to the root directory where the unzipped backend code is located
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5BB21E13D72C4003BB86D8798855EF4D }}  # Azure publish profile for authentication
