@@ -66,6 +66,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'ibnamer-backend'  # Name of the Azure Web App for backend
-          slot-name: ''  # Deploy to the production slot
+      
           package: .  # <-- Ensure this points to the backend directory after unzipping
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5BB21E13D72C4003BB86D8798855EF4D }}  # Azure publish profile for authentication
