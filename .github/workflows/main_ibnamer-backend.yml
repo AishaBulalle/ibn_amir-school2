@@ -60,7 +60,7 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip  # Unzip the artifact to the current directory
 
-        # Change directory to backend before deployment
+      # Change directory to backend before deployment
       - name: Change to backend directory
         run: cd ./backend
 
@@ -70,6 +70,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'ibnamer-backend'  # Name of the Azure Web App for backend
-      
-          package: .  # <-- Ensure this points to the backend directory after unzipping
+          package: .  # Ensure this points to the backend directory after unzipping
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5BB21E13D72C4003BB86D8798855EF4D }}  # Azure publish profile for authentication
