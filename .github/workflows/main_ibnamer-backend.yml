@@ -60,6 +60,10 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip  # Unzip the artifact to the current directory
 
+        # Change directory to backend before deployment
+      - name: Change to backend directory
+        run: cd ./backend
+
       # Deploy the unzipped files to Azure Web App from the backend directory
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
