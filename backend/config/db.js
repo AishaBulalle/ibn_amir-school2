@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'aisha123',
-  database: 'ibn_amir_school2',
+  host: process.env.DB_HOST, // Get host from environment variable
+  user: process.env.DB_USER, // Get user from environment variable
+  password: process.env.DB_PASSWORD, // Get password from environment variable
+  database: process.env.DB_NAME, // Get database name from environment variable
 });
 
 db.connect((err) => {
