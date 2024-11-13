@@ -24,7 +24,7 @@ jobs:
       # Install dependencies, build, and test in the backend directory
       - name: Install dependencies, build, and test (backend)
         run: |
-          cd ./backend  # Change to the backend directory where package.json is located
+          cd backend  # Change to the backend directory where package.json is located
           npm install    # Install dependencies
           npm run build --if-present  # Run build command if it exists
           npm run test --if-present    # Run test command if it exists
@@ -32,7 +32,7 @@ jobs:
       # Create a zip artifact of the backend contents for deployment
       - name: Zip artifact for deployment
         run: |
-          cd ./backend  # Change to the backend directory again
+          cd backend  # Change to the backend directory again
           zip -r release.zip .  # Create a zip file of the backend contents
 
       # Upload the zip artifact for the deployment job
@@ -60,15 +60,11 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip  # Unzip the artifact to the current directory
 
-      # Change directory to backend before deployment
-      - name: Change to backend directory
-        run: cd ./backend
-
       # Deploy the unzipped files to Azure Web App from the backend directory
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'ibnamer-backend'  # Name of the Azure Web App for backend
-          package: .  # Ensure this points to the backend directory after unzipping
+          package: ./backend  # Ensure this points to the backend directory after unzipping
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5BB21E13D72C4003BB86D8798855EF4D }}  # Azure publish profile for authentication
