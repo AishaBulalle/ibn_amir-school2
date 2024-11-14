@@ -13,7 +13,13 @@ const app = express();
 //const PORT = process.env.PORT || 8080;
 
 // Middleware
-app.use(cors());
+//app.use(cors());
+app.use(
+  cors({
+    origin: 'https://witty-grass-01616631e.5.azurestaticapps.net', // Frontend URL
+    credentials: true, // Allow cookies or authentication headers
+  })
+);
 app.use(bodyParser.json());
 
 // Add a route for the root URL
