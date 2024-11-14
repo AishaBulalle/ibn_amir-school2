@@ -1,5 +1,5 @@
 const API_URL =
-  'ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net';
+  'https://ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net';
 
 export const getCoursesByStudentId = async (studentId: number) => {
   const response = await fetch(`${API_URL}/enrollments/student/${studentId}`);
