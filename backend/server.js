@@ -10,7 +10,7 @@ const enrollmentRoutes = require('./routes/enrollmentRoutes');
 const authRoutes = require('./routes/authRoutes'); // Import the auth routes
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+//const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(cors());
@@ -28,6 +28,10 @@ app.use('/enrollments', enrollmentRoutes);
 app.use('/auth', authRoutes); // This line makes your login endpoint available at /auth/login
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+//app.listen(PORT, () => {
+// console.log(`Server running on port ${PORT}`);
+//});
+
+app.listen(process.env.PORT || 8080, () => {
+  console.log('Server is running on port 8080');
 });
