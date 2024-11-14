@@ -19,6 +19,7 @@
   z-index: 1; /* Ensure it's on top of the background */
   overflow: auto; /* Allow scrolling if content overflows */
   flex-grow: 1; /* Allow this container to grow */
+  color: rgb(6, 6, 6);
 }
 
 .homepage-header {
@@ -95,11 +96,12 @@
   border-radius: 10px; /* Rounded corners */
   text-align: center; /* Center text */
   background-color: rgba(
-    248,
-    247,
-    247,
+    255,
+    255,
+    255,
     0.8
   ); /* Light background for contrast */
+  color: rgb(6, 6, 6);
 }
 
 .course-image {

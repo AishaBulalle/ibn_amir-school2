@@ -22,6 +22,7 @@
   ); /* Light background with transparency */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
+  color: rgb(6, 6, 6);
 }
 
 /* Title */

@@ -46,6 +46,7 @@
   border: 1px solid #ddd; /* Border style */
   border-radius: 4px; /* Rounded corners */
   width: 100%; /* Full width of the container */
+  color: rgb(255, 254, 254);
 }
 
 /* Button Styles */
