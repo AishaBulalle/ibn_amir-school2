@@ -1,10 +1,19 @@
+require('dotenv').config();
+
 const mysql = require('mysql2');
 
+//const db = mysql.createConnection({
+// host: 'localhost',
+//user: 'root',
+// password: 'aisha123',
+//  database: 'ibn_amir_school2',
+//});
+
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'aisha123',
-  database: 'ibn_amir_school2',
+  host: process.env.DB_HOST, // This will be dynamic
+  user: process.env.DB_USER, // This will be dynamic
+  password: process.env.DB_PASSWORD, // This will be dynamic
+  database: process.env.DB_NAME, // This will be dynamic
 });
 
 const getAllStudents = (callback) => {
