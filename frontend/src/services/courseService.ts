@@ -1,5 +1,6 @@
 // src/services/courseService.ts
-const API_URL = 'http://localhost:5001';
+const API_URL =
+  'ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net';
 
 export const getCourses = async () => {
   const response = await fetch(`${API_URL}/courses`);

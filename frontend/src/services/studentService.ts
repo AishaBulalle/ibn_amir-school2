@@ -1,6 +1,7 @@
 import { Student } from '../types/Student';
 
-const API_URL = 'http://localhost:5001';
+const API_URL =
+  'ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net';
 
 export const getStudents = async () => {
   const response = await fetch(`${API_URL}/students`);
