@@ -1,44 +1,39 @@
 /* src/styles/HomePage.css */
 .homepage {
-  height: 100%; /* Ensure the body takes up the full height */
-  margin: 0; /* Remove default margin */
-  background-image: url('../assets/ibnamir1234.avif'); /* Path to your background image */
-  background-size: cover; /* Cover the entire viewport */
-  background-repeat: no-repeat; /* Prevent repeating the image */
+  height: 100%;
+  margin: 0;
+  background-image: url('../assets/ibnamir1234.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .homepage-container {
-  height: 100%; /* Make sure the homepage container takes the full height */
-  display: flex; /* Use Flexbox for layout */
-  flex-direction: column; /* Arrange children in a column */
-  width: 100%; /* Full width */
-  margin: 0; /* Remove margin */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
   font-family: 'Arial', sans-serif;
   text-align: center;
-  position: relative; /* Position relative to allow z-index management */
-  z-index: 1; /* Ensure it's on top of the background */
-  overflow: auto; /* Allow scrolling if content overflows */
-  flex-grow: 1; /* Allow this container to grow */
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  flex-grow: 1;
   color: rgb(6, 6, 6);
 }
 
 .homepage-header {
-  position: fixed; /* Fixed header */
-  top: 0; /* Align to top */
-  left: 0; /* Align to left */
-  right: 0; /* Align to right */
-  background-color: rgba(
-    250,
-    249,
-    249,
-    0.8
-  ); /* Adjust to a transparent color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(250, 249, 249, 0.8);
   color: rgb(8, 1, 1);
   padding: 20px;
-  z-index: 1000; /* Keep it on top */
-  display: flex; /* Flexbox for header */
-  justify-content: space-between; /* Space between elements */
-  align-items: center; /* Center items vertically */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .homepage-header h1 {
@@ -60,72 +55,62 @@
 }
 
 .homepage-section {
-  margin: 100px 20px 20px; /* Add top margin to create space for the fixed header */
+  margin: 100px 20px 20px;
   padding: 15px;
-  position: relative; /* Ensure it can overlap the video */
-  z-index: 10; /* Keep it above the video */
+  position: relative;
+  z-index: 10;
 }
 
 .video-section {
-  margin: 20px 0; /* Space around the video */
+  margin: 20px 0;
 }
 
 .courses-section {
-  margin: 20px 0; /* Add margin for spacing */
+  margin: 20px 0;
   padding: 15px;
-  border-radius: 5px; /* Maintain rounded corners */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Light background for contrast */
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .course-container {
-  display: flex; /* Use Flexbox for layout */
-  justify-content: space-around; /* Space the boxes evenly */
-  flex-wrap: wrap; /* Wrap boxes to the next line if necessary */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .course-box {
-  width: 30%; /* Set width of each course box */
-  margin: 10px; /* Space around each box */
+  width: 30%;
+  margin: 10px;
   padding: 15px;
-  border: 2px solid #cbb408; /* Border color */
-  border-radius: 10px; /* Rounded corners */
-  text-align: center; /* Center text */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Light background for contrast */
+  border: 2px solid #cbb408;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
   color: rgb(6, 6, 6);
 }
 
 .course-image {
-  border-radius: 50%; /* Make the image container round */
-  overflow: hidden; /* Crop overflow */
-  width: 100px; /* Set fixed width for the image container */
-  height: 100px; /* Set fixed height for the image container */
-  margin: 0 auto 10px; /* Center the image and add margin below */
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
 }
 
 .course-image img {
-  width: 100%; /* Fill the container */
-  height: 100%; /* Ensure it takes full height for round shape */
-  object-fit: cover; /* Cover the entire area without distortion */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .footer {
-  padding: 20px; /* Padding for the footer content */
-  background-color: transparent; /* Remove background color */
-  color: rgb(6, 6, 6); /* Set text color */
-  text-align: center; /* Center text in footer */
-  position: relative; /* Ensure it stays in place */
-  width: 100%; /* Full width */
-  bottom: 0; /* Align to bottom */
+  padding: 20px;
+  background-color: transparent;
+  color: rgb(6, 6, 6);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }
 
 .footer h2 {

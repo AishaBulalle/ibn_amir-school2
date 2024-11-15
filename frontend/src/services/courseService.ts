@@ -1,4 +1,3 @@
-// src/services/courseService.ts
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const getCourses = async () => {
@@ -34,5 +33,3 @@ export const getCoursesByStudentId = async (studentId: number) => {
   }
   return response.json();
 };
-
-// You can add other functions like updateCourse, deleteCourse, etc., here as needed

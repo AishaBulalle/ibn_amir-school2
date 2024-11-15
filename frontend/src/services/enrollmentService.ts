@@ -22,7 +22,6 @@ export const addEnrollment = async (studentId: number, courseId: number) => {
   return response.json();
 };
 
-// Update Enrollment based on studentId and courseId
 export const updateEnrollment = async (studentId: number, courseId: number) => {
   const response = await fetch(`${API_URL}/enrollments/student/${studentId}`, {
     method: 'PUT',

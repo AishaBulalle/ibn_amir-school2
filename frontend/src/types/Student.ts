@@ -1,8 +1,6 @@
 export interface Student {
-  id?: number; // Make the id optional
+  id?: number;
   username: string;
   email: string;
   role?: string;
-
-  // Other properties if needed
 }

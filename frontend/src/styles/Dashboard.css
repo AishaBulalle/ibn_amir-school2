@@ -1,25 +1,19 @@
-/* Dashboard Background */
 .dashboard {
-  height: 100vh; /* Make sure it takes the full viewport height */
-  margin: 0; /* Remove default margin */
-  background-image: url('../assets/ibnamir1234.avif'); /* Path to your background image */
-  background-size: cover; /* Cover the entire viewport */
-  background-repeat: no-repeat; /* Prevent repeating the image */
-  position: relative; /* Positioning context for the container */
+  height: 100vh;
+  margin: 0;
+  background-image: url('../assets/ibnamir1234.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 /* Dashboard Container */
 .dashboard-container {
-  max-width: 800px; /* Updated for better fit */
-  margin: 0 auto; /* Center the container */
+  max-width: 800px;
+  margin: 0 auto;
   padding: 50px;
   border-radius: 8px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Light background with transparency */
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   color: rgb(6, 6, 6);
@@ -28,7 +22,7 @@
 /* Title */
 .dashboard-container h1 {
   text-align: center;
-  color: rgb(8, 1, 1); /* Dark red for title */
+  color: rgb(8, 1, 1);
   margin-bottom: 20px;
 }
 
@@ -46,12 +40,7 @@
   align-items: center;
   padding: 15px;
   border-bottom: 1px solid #ddd;
-  background-color: rgba(
-    248,
-    247,
-    247,
-    0.8
-  ); /* Light background for student items */
+  background-color: rgba(248, 247, 247, 0.8);
 }
 
 .student-item:last-child {
@@ -71,7 +60,7 @@
 
 /* Action Buttons */
 .student-actions button {
-  background-color: #ddac43; /* Yellow for primary actions */
+  background-color: #ddac43;
   border: none;
   color: white;
   padding: 8px 12px;
@@ -81,15 +70,15 @@
 }
 
 .student-actions button:hover {
-  background-color: #c69c36; /* Darker yellow on hover */
+  background-color: #c69c36;
 }
 
 .student-actions button.delete {
-  background-color: #dc3545; /* Red for delete */
+  background-color: #dc3545;
 }
 
 .student-actions button.delete:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333;
 }
 
 /* Form Section */
@@ -108,7 +97,7 @@
 
 .form-section button {
   align-self: flex-start;
-  background-color: #28a745; /* Green for add */
+  background-color: #28a745;
   border: none;
   color: #fff;
   padding: 10px 15px;
@@ -117,7 +106,7 @@
 }
 
 .form-section button:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838;
 }
 
 /* Search Section */
@@ -140,7 +129,7 @@
 }
 
 .filter-buttons button {
-  background-color: #ddac43; /* Yellow for filter buttons */
+  background-color: #ddac43;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -150,11 +139,11 @@
 }
 
 .filter-buttons button.active {
-  background-color: #c69c36; /* Darker yellow for active */
+  background-color: #c69c36;
 }
 
 .filter-buttons button:hover {
-  background-color: #c69c36; /* Darker yellow on hover */
+  background-color: #c69c36;
 }
 
 /* Course List */
@@ -178,7 +167,7 @@
 }
 
 .course-update-form button {
-  background-color: #c69c36; /* Green for add/update */
+  background-color: #c69c36;
   color: white;
   border: none;
   padding: 8px;
@@ -187,7 +176,7 @@
 }
 
 .course-update-form button:hover {
-  background-color: #c69c36; /* Darker green on hover */
+  background-color: #c69c36;
 }
 
 /* Course Update Section */
@@ -213,24 +202,24 @@
 }
 
 .course-update .add-course {
-  background-color: #28a745; /* Green for add */
+  background-color: #28a745;
 }
 
 .course-update .add-course:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838;
 }
 
 .course-update .update-course {
-  background-color: #c69c36; /* Blue for update */
+  background-color: #c69c36;
 }
 
 .course-update .update-course:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
 }
 
 .error-message {
-  background-color: #ffcccc; /* Light red background */
-  color: #990000; /* Dark red text */
+  background-color: #ffcccc;
+  color: #990000;
   padding: 10px;
   text-align: center;
   font-size: 16px;
@@ -239,6 +228,6 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Ensure it's at the top */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

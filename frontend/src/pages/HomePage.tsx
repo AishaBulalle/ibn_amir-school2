@@ -1,11 +1,9 @@
-// src/pages/HomePage.tsx
-
 import { Link } from 'react-router-dom';
 import '../styles/HomePage.css';
-import videoFile from '../assets/ibnamir-video.mp4'; // Import the video file
-import quranImage from '../assets/quran.webp'; // Import Quran image
-import arabicImage from '../assets/arabic.webp'; // Import Arabic image
-import islamicStudiesImage from '../assets/islamic studies.webp'; // Import Islamic Studies image
+import videoFile from '../assets/ibnamir-video.mp4';
+import quranImage from '../assets/quran.webp';
+import arabicImage from '../assets/arabic.webp';
+import islamicStudiesImage from '../assets/islamic studies.webp';
 
 const HomePage = () => {
   return (
