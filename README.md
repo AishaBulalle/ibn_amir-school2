@@ -4,6 +4,7 @@ Frontend of Ibn Amer School Application
 This is the frontend part of the Ibn Amir School application. It is built using React and TypeScript and communicates with the backend via API requests.
 
 Deployment
+
 The frontend is deployed on Azure, here is the link: https://witty-grass-01616631e.5.azurestaticapps.net
 
 Installation
@@ -29,6 +30,7 @@ Backend of Ibn Amer School Application
 This is the backend part of the Ibn Amir School application. It is built using Express.js and MySQL.
 
 Deployment
+
 The backend is deployed on Azure and connected to a MySQL database, , here is the link: https://ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net/
 
 Installation
