@@ -1,4 +1,4 @@
-const db = require('../config/db'); // Assuming you have a db.js file for DB connection
+const db = require('../config/db');
 
 const getAllCourses = (callback) => {
   const sql = 'SELECT * FROM courses';
@@ -36,8 +36,6 @@ const getCoursesByStudentId = (studentId, callback) => {
   `;
   db.query(sql, [studentId], callback);
 };
-
-// Other CRUD operations (delete, update, etc.) can be added similarly
 
 module.exports = {
   getAllCourses,

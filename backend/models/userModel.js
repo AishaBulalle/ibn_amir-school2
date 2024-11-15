@@ -1,4 +1,3 @@
-// models/userModel.js
 const db = require('../config/db');
 
 const User = {
@@ -9,11 +8,10 @@ const User = {
         if (err) {
           return reject(err);
         }
-        resolve(results[0]); // Return the first user found, or undefined if not found
+        resolve(results[0]);
       });
     });
   },
-  // Add other user-related methods as needed
 };
 
 module.exports = User;
