@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST, // Host from the .env file
-  user: process.env.DB_USER, // User from the .env file
-  password: process.env.DB_PASSWORD, // Password from the .env file
-  database: process.env.DB_NAME, // Database from the .env file
+  host: process.env.MYSQL_HOST, // MySQL Host, will be different locally and in Azure
+  user: process.env.MYSQL_USER, // MySQL Username
+  password: process.env.MYSQL_PASSWORD, // MySQL Password
+  database: process.env.MYSQL_DATABASE,
 });
 
 db.connect((err) => {

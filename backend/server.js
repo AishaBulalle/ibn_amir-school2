@@ -1,5 +1,6 @@
 // server.js
-require('dotenv').config();
+require('dotenv').config({ path: '.env.local' });
+//require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -14,12 +15,23 @@ const app = express();
 
 // Middleware
 //app.use(cors());
+//app.use(
+//cors({ 'http://localhost:5173',
+// origin: 'https://witty-grass-01616631e.5.azurestaticapps.net', // Frontend URL
+// credentials: true, // Allow cookies or authentication headers
+//})
+//);
+
 app.use(
   cors({
-    origin: 'https://witty-grass-01616631e.5.azurestaticapps.net', // Frontend URL
+    origin: [
+      'http://localhost:5173', // Local development URL
+      'https://witty-grass-01616631e.5.azurestaticapps.net', // Deployed frontend URL
+    ],
     credentials: true, // Allow cookies or authentication headers
   })
 );
+
 app.use(bodyParser.json());
 
 // Add a route for the root URL
@@ -39,5 +51,5 @@ app.use('/auth', authRoutes); // This line makes your login endpoint available a
 //});
 
 app.listen(process.env.PORT || 8080, () => {
-  console.log('Server is running on port 8080');
+  console.log('Server is running on port 5001');
 });

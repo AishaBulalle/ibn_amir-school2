@@ -10,10 +10,10 @@ const mysql = require('mysql2');
 //});
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST, // This will be dynamic
-  user: process.env.DB_USER, // This will be dynamic
-  password: process.env.DB_PASSWORD, // This will be dynamic
-  database: process.env.DB_NAME, // This will be dynamic
+  host: process.env.MYSQL_HOST, // MySQL Host, will be different locally and in Azure
+  user: process.env.MYSQL_USER, // MySQL Username
+  password: process.env.MYSQL_PASSWORD, // MySQL Password
+  database: process.env.MYSQL_DATABASE,
 });
 
 const getAllStudents = (callback) => {
