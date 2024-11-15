@@ -7,6 +7,10 @@ Deployment
 
 The frontend is deployed on Azure, here is the link: https://witty-grass-01616631e.5.azurestaticapps.net
 
+when you enter the deployed frontend and press on teacher login,
+the email is: ali.mansour@example.com
+the password is: teacher_password
+
 Installation
 
 1. Clone the repository:https://github.com/AishaBulalle/ibn_amir-school2.git
@@ -22,7 +26,6 @@ Installation
 6. Run the application locally: npm run dev
 
 7. Your frontend will be running at http://localhost:5173
-
 
 Backend - README
 
@@ -40,27 +43,19 @@ Installation
 2. Install dependencies: npm install
 
 3. Create environment variables, In the backend folder, create a .env.local file for local development and add the following:
-MYSQL_HOST=localhost
-MYSQL_USER=root
-MYSQL_PASSWORD=aisha123
-MYSQL_DATABASE=ibn_amir_school2
-PORT=5001
+   MYSQL_HOST=localhost
+   MYSQL_USER=root
+   MYSQL_PASSWORD=aisha123
+   MYSQL_DATABASE=ibn_amir_school2
+   PORT=5001
 
 4. For production (Azure deployment), create a .env.production file:
-MYSQL_HOST=ibn-amir-school-db.mysql.database.azure.com
-MYSQL_USER=adminroot
-MYSQL_PASSWORD=Aisha123
-MYSQL_DATABASE=ibn-amir-school-db
-PORT=8080
+   MYSQL_HOST=ibn-amir-school-db.mysql.database.azure.com
+   MYSQL_USER=adminroot
+   MYSQL_PASSWORD=Aisha123
+   MYSQL_DATABASE=ibn-amir-school-db
+   PORT=8080
 
 5. Run the server locally: node server.js
 
 6. Your backend will be running on http://localhost:5001
-
-
-   
-
-
-
-
-
