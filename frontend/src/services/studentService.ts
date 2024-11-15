@@ -1,7 +1,6 @@
 import { Student } from '../types/Student';
 
-const API_URL =
-  'https://ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net';
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const getStudents = async () => {
   const response = await fetch(`${API_URL}/students`);

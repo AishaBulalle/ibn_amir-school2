@@ -10,7 +10,7 @@ const LoginPage = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     const response = await fetch(
-      'https://ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net/auth/login',
+      import.meta.env.VITE_BACKEND_URL + '/auth/login',
       {
         method: 'POST',
         headers: {

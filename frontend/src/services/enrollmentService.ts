@@ -1,5 +1,4 @@
-const API_URL =
-  'https://ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net';
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const getCoursesByStudentId = async (studentId: number) => {
   const response = await fetch(`${API_URL}/enrollments/student/${studentId}`);

@@ -1,6 +1,5 @@
 // src/services/courseService.ts
-const API_URL =
-  'ibnamer-backend-arghgkfthtbjbzcs.swedencentral-01.azurewebsites.net';
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const getCourses = async () => {
   const response = await fetch(`${API_URL}/courses`);
